@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import Vibrant = require('../index')
+import Vibrant from '../index'
 
 import omit = require('lodash/omit')
 

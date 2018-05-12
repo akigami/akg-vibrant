@@ -16,7 +16,7 @@ import {
     SAMPLES
 } from './common/data'
 
-import Vibrant = require('../')
+import Vibrant from '../'
 import Builder from '../builder'
 
 describe('Palette Extraction', () => {
