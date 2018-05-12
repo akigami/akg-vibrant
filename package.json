@@ -1,5 +1,5 @@
 {
-  "name": "node-vibrant",
+  "name": "akg-vibrant",
   "version": "3.0.0",
   "description": "Extract prominent colors from an image. Supports both node and browser environment.",
   "main": "lib/index.js",
@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akfish/node-vibrant.git"
+    "url": "https://github.com/akigami/akg-vibrant.git"
   },
   "keywords": [
     "color",
@@ -70,6 +70,6 @@
     "muted",
     "colour"
   ],
-  "author": "akfish",
+  "author": "yukioru",
   "license": "MIT"
 }
