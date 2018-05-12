@@ -1,6 +1,6 @@
-import Vibrant from './vibrant'
-import NodeImage from './image/node'
+import Vibrant from './vibrant';
+import NodeImage from './image/node';
 
-Vibrant.DefaultOpts.ImageClass = NodeImage
+Vibrant.DefaultOpts.ImageClass = NodeImage;
 
-export = Vibrant
+export default Vibrant;
