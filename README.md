@@ -1,11 +1,10 @@
-# node-vibrant
-[![Build Status](https://travis-ci.org/akfish/node-vibrant.svg?branch=master)](https://travis-ci.org/akfish/node-vibrant)
+# akg-vibrant
 
-Extract prominent colors from an image.
+Extract prominent colors from an image. Fixed version.
 
 ## New WebWorker support in v3.0
 
-Quantization is the most time-consuming stage in `node-vibrant`. In v3.0, the quantization can be run in the WebWorker to avoid freezing the UI thread. 
+Quantization is the most time-consuming stage in `akg-vibrant`. In v3.0, the quantization can be run in the WebWorker to avoid freezing the UI thread. 
 
 Here's how to use this feature:
 1. Use WebWorker build `dist/vibrant.worker.js` or `dist/vibrant.worker.min.js`. Or if you are re-bundling with webpack, use `lib/bundle.worker.js` as entry
@@ -24,7 +23,7 @@ Here's how to use this feature:
 ## Install
 
 ```bash
-$ npm install node-vibrant
+$ npm install akg-vibrant
 ```
 
 ## Usage
@@ -32,11 +31,11 @@ $ npm install node-vibrant
 
 ```js
 // ES5
-var Vibrant = require('node-vibrant')
+var Vibrant = require('akg-vibrant')
 // ES6
-import * as Vibrant from 'node-vibrant'
+import * as Vibrant from 'akg-vibrant'
 // TypeScript
-import Vibrant = require('node-vibrant')
+import Vibrant from 'akg-vibrant'
 
 // Using builder
 Vibrant.from('path/to/image').getPalette((err, palette) => console.log(palette))
@@ -53,8 +52,7 @@ v.getPalette().then((palette) => console.log(palette))
 
 ### Browser
 
-If you installed node-vibrant with `npm`, compiled bundles are available under `node_modules/node-vibrant/dist`.
-Or you can download bundles from [Relases](https://github.com/akfish/node-vibrant/releases).
+If you installed akg-vibrant with `npm`, compiled bundles are available under `node_modules/akg-vibrant/dist`.
 
 ```html
 <!-- Debug version -->
@@ -83,7 +81,7 @@ Or you can download bundles from [Relases](https://github.com/akfish/node-vibran
 ## References
 
 ### `Vibrant`
-Main class of `node-vibrant`.
+Main class of `akg-vibrant`.
 
 #### `Vibrant.from(src: ImageSource): Builder`
 Make a `Builder` for an image. Returns a `Builder` instance.
@@ -306,10 +304,10 @@ Task            | Description
 
 ## Notes
 ### Intentional Deviation From `vibrant.js`
-- `node-vibrant` takes image path, not the image object as parameter for the obvious reason that node.js environment has no access to HTML DOM object.
-- `node-vibrant` provides asynchronous API since most node.js image processing library is asynchronous. And the original `vibrant.js` workflow is asynchronous any way (though you will have to handle the image loading yourself, while `node-vibrant` does it for you).
-- `node-vibrant` uses one single `opts` object to hold all options for future expansions. And it feels more node.js-like.
-- `node-vibrant` uses method call to initiate image processing instead of constructor so that developers can use it with `Promise`.
+- `akg-vibrant` takes image path, not the image object as parameter for the obvious reason that node.js environment has no access to HTML DOM object.
+- `akg-vibrant` provides asynchronous API since most node.js image processing library is asynchronous. And the original `vibrant.js` workflow is asynchronous any way (though you will have to handle the image loading yourself, while `akg-vibrant` does it for you).
+- `akg-vibrant` uses one single `opts` object to hold all options for future expansions. And it feels more node.js-like.
+- `akg-vibrant` uses method call to initiate image processing instead of constructor so that developers can use it with `Promise`.
 
 ### Result Consistency
 The results is consistent within each user's browser instance regardelss of visible region or display size of the image, unlike the original `vibrant.js` implementation.
