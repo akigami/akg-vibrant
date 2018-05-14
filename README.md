@@ -4,7 +4,7 @@ Extract prominent colors from an image. Fixed version.
 
 ## New WebWorker support in v3.0
 
-Quantization is the most time-consuming stage in `akg-vibrant`. In v3.0, the quantization can be run in the WebWorker to avoid freezing the UI thread. 
+Quantization is the most time-consuming stage in `@akigami/vibrant`. In v3.0, the quantization can be run in the WebWorker to avoid freezing the UI thread. 
 
 Here's how to use this feature:
 1. Use WebWorker build `dist/vibrant.worker.js` or `dist/vibrant.worker.min.js`. Or if you are re-bundling with webpack, use `lib/bundle.worker.js` as entry
@@ -23,7 +23,7 @@ Here's how to use this feature:
 ## Install
 
 ```bash
-$ npm install akg-vibrant
+$ npm install @akigami/vibrant
 ```
 
 ## Usage
@@ -31,11 +31,11 @@ $ npm install akg-vibrant
 
 ```js
 // ES5
-var Vibrant = require('akg-vibrant')
+var Vibrant = require('@akigami/vibrant')
 // ES6
-import * as Vibrant from 'akg-vibrant'
+import * as Vibrant from '@akigami/vibrant'
 // TypeScript
-import Vibrant from 'akg-vibrant'
+import Vibrant from '@akigami/vibrant'
 
 // Using builder
 Vibrant.from('path/to/image').getPalette((err, palette) => console.log(palette))
@@ -52,7 +52,7 @@ v.getPalette().then((palette) => console.log(palette))
 
 ### Browser
 
-If you installed akg-vibrant with `npm`, compiled bundles are available under `node_modules/akg-vibrant/dist`.
+If you installed @akigami/vibrant with `npm`, compiled bundles are available under `node_modules/@akigami/vibrant/dist`.
 
 ```html
 <!-- Debug version -->
@@ -81,7 +81,7 @@ If you installed akg-vibrant with `npm`, compiled bundles are available under `n
 ## References
 
 ### `Vibrant`
-Main class of `akg-vibrant`.
+Main class of `@akigami/vibrant`.
 
 #### `Vibrant.from(src: ImageSource): Builder`
 Make a `Builder` for an image. Returns a `Builder` instance.
@@ -304,10 +304,10 @@ Task            | Description
 
 ## Notes
 ### Intentional Deviation From `vibrant.js`
-- `akg-vibrant` takes image path, not the image object as parameter for the obvious reason that node.js environment has no access to HTML DOM object.
-- `akg-vibrant` provides asynchronous API since most node.js image processing library is asynchronous. And the original `vibrant.js` workflow is asynchronous any way (though you will have to handle the image loading yourself, while `akg-vibrant` does it for you).
-- `akg-vibrant` uses one single `opts` object to hold all options for future expansions. And it feels more node.js-like.
-- `akg-vibrant` uses method call to initiate image processing instead of constructor so that developers can use it with `Promise`.
+- `@akigami/vibrant` takes image path, not the image object as parameter for the obvious reason that node.js environment has no access to HTML DOM object.
+- `@akigami/vibrant` provides asynchronous API since most node.js image processing library is asynchronous. And the original `vibrant.js` workflow is asynchronous any way (though you will have to handle the image loading yourself, while `@akigami/vibrant` does it for you).
+- `@akigami/vibrant` uses one single `opts` object to hold all options for future expansions. And it feels more node.js-like.
+- `@akigami/vibrant` uses method call to initiate image processing instead of constructor so that developers can use it with `Promise`.
 
 ### Result Consistency
 The results is consistent within each user's browser instance regardelss of visible region or display size of the image, unlike the original `vibrant.js` implementation.
