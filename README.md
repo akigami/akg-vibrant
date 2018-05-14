@@ -1,4 +1,4 @@
-# akg-vibrant
+# Vibrant
 
 Extract prominent colors from an image. Fixed version.
 
